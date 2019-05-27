@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import org.jboss.logging.Logger;
 
 @Component
-@PropertySource("application.properties")
+@PropertySource("classpath:application.properties")
 public class PropertiesWithJavaConfig implements ApplicationListener<ContextRefreshedEvent> {
     private static final Logger logs = Logger.getLogger(PropertiesWithJavaConfig.class);
     private TrackRepository trackRepository;
