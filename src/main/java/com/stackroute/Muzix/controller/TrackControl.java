@@ -76,11 +76,11 @@ public class TrackControl {
         return responseEntity;
     }
 
-    @RequestMapping(value = "track/{trackName}", method = RequestMethod.GET)
-    public ResponseEntity<List<Track>> getTrackByName(@PathVariable("trackName") String trackName) throws Exception {
-        List<Track> track1 = trackService.getTrackByName(trackName);
-        return new ResponseEntity<List<Track>>(track1, HttpStatus.OK);
-    }
+//    @RequestMapping(value = "track/{trackName}", method = RequestMethod.GET)
+//    public ResponseEntity<List<Track>> getTrackByName(@PathVariable("trackName") String trackName) throws Exception {
+//        List<Track> track1 = trackService.getTrackByName(trackName);
+//        return new ResponseEntity<List<Track>>(track1, HttpStatus.OK);
+//    }
 
 //    @Autowired
 //    private Environment env;

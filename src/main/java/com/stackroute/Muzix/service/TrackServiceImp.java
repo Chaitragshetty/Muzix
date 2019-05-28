@@ -16,6 +16,7 @@ import java.util.List;
 public class TrackServiceImp implements TrackService {
     @Autowired
     private TrackRepository trackRepository;
+   private TrackServiceImp trackServiceImp;
 
     public void setTrackRepository(TrackRepository trackRepository) {
         this.trackRepository = trackRepository;
@@ -25,7 +26,7 @@ public class TrackServiceImp implements TrackService {
         this.trackRepository = trackRepository;
     }
 
-    private TrackServiceImp trackServiceImp;
+
     @Override
     public Track saveTrack(Track track) throws TrackAlreadyExsistException {
         if (trackRepository.existsById(track.getTrackid())) {
@@ -81,7 +82,12 @@ public class TrackServiceImp implements TrackService {
         }
         //return answer;
     }
-//        return false;
+
+//    @Override
+//    public List<Track> getTrackByName(String Name) throws TrackNotFoundException {
+//        return null;
+//    }
+////        return false;
     //        else
 //        {
 //            throw new TrackNotFoundException("Track not found exception");
@@ -90,17 +96,18 @@ public class TrackServiceImp implements TrackService {
         //return null;
 //    }
 
-
-    @Override
-    public List<Track> getTrackByName(String Name) throws TrackNotFoundException {
-        List<Track> listOfTracks = null;
-        listOfTracks = trackRepository.getTrackByName(Name);
-        if (listOfTracks.equals(null))
-        {
-            throw new TrackNotFoundException("Track not found exception");
-        }
-        return listOfTracks;
-
-    }
+//
+//    @Override
+//    public List<Track> getTrackByName(String Name) throws TrackNotFoundException {
+//        List<Track> listOfTracks = null;
+//        listOfTracks = trackRepository.getTrackByName(Name);
+//        if (listOfTracks.equals(null))
+//        {
+//            throw new TrackNotFoundException("Track not found exception");
+//        }
+//        return listOfTracks;
+//
+//    }
 
 }
+

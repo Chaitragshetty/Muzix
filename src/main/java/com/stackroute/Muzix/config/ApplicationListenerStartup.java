@@ -19,7 +19,7 @@ public class ApplicationListenerStartup implements ApplicationListener<ContextRe
     private TrackRepository trackRepository;
 
     @Autowired
-    private Environment env;
+    //private Environment env;
     public ApplicationListenerStartup(TrackRepository trackRepository){
         this.trackRepository=trackRepository;
     }
@@ -28,12 +28,12 @@ public class ApplicationListenerStartup implements ApplicationListener<ContextRe
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent){
         logs.info("Inserting data on start");
 
-       /* Track track1 = new Track(2,"Darkside","Singer : alan Walker");
+        Track track1 = new Track(2,"Darkside","Singer : alan Walker");
         trackRepository.save(track1);
         Track track2 = new Track(3,"walkthroughfire","Singer : alanwalker");
-        trackRepository.save(track2);*/
-        Track track9 = new Track(Integer.parseInt(env.getProperty("trackid")),env.getProperty("name"),env.getProperty("comments"));
-        trackRepository.save(track9);
+        trackRepository.save(track2);
+//        Track track9 = new Track(Integer.parseInt(env.getProperty("trackid")),env.getProperty("name"),env.getProperty("comments"));
+//        trackRepository.save(track9);
 
         logs.info("data successfully inserted");
     }
